@@ -9,7 +9,7 @@ function EditTask() {
 
   useEffect(() => {
     const token = localStorage.getItem('token');
-    axios.get('http://localhost:5000/api/tasks', {
+    axios.get('https://sparkling-rejoicing-production.up.railway.app/api/tasks', {
       headers: { Authorization: `Bearer ${token}` }
     }).then(res => {
       const task = res.data.find(t => t._id === id);
@@ -22,7 +22,7 @@ function EditTask() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const token = localStorage.getItem('token');
-    await axios.put(`http://localhost:5000/api/tasks/${id}`, form, {
+    await axios.put(`https://sparkling-rejoicing-production.up.railway.app/api/tasks/${id}`, form, {
       headers: { Authorization: `Bearer ${token}` },
     });
     navigate('/');

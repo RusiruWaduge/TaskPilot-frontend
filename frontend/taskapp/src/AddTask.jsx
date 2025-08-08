@@ -13,7 +13,7 @@ function AddTask() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     localStorage.setItem('token', res.data.token);
-    await axios.post('http://localhost:5000/api/tasks', form, {
+    await axios.post('https://sparkling-rejoicing-production.up.railway.app/api/tasks', form, {
       headers: { Authorization: `Bearer ${token}` },
     });
     navigate('/');

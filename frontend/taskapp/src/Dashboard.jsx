@@ -78,7 +78,7 @@ function Dashboard() {
   // Fetch logged-in user details
   const fetchUser = async () => {
     try {
-      const res = await fetch('http://localhost:5000/api/auth/me', {
+      const res = await fetch('https://sparkling-rejoicing-production.up.railway.app/api/auth/me', {
         method: 'GET',
         headers: {
           Authorization: `Bearer ${token}`,
@@ -100,7 +100,7 @@ function Dashboard() {
   // Fetch all tasks
   const fetchTasks = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/tasks', {
+      const res = await axios.get('https://sparkling-rejoicing-production.up.railway.app/api/tasks', {
         headers: { Authorization: `Bearer ${token}` },
       });
       setTasks(res.data);
@@ -134,14 +134,14 @@ function Dashboard() {
     try {
       if (editingTaskId) {
         await axios.put(
-          `http://localhost:5000/api/tasks/${editingTaskId}`,
+          `https://sparkling-rejoicing-production.up.railway.app/api/tasks/${editingTaskId}`,
           formData,
           { headers: { Authorization: `Bearer ${token}` } }
         );
         setEditingTaskId(null);
       } else {
         await axios.post(
-          'http://localhost:5000/api/tasks',
+          'https://sparkling-rejoicing-production.up.railway.app/api/tasks',
           formData,
           { headers: { Authorization: `Bearer ${token}` } }
         );
@@ -175,7 +175,7 @@ function Dashboard() {
   const handleDelete = async (taskId) => {
     if (!window.confirm('Are you sure you want to delete this task?')) return;
     try {
-      await axios.delete(`http://localhost:5000/api/tasks/${taskId}`, {
+      await axios.delete(`https://sparkling-rejoicing-production.up.railway.app/api/tasks/${taskId}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       fetchTasks();
@@ -188,7 +188,7 @@ function Dashboard() {
   const handleToggleComplete = async (taskId, currentStatus) => {
     try {
       await axios.patch(
-        `http://localhost:5000/api/tasks/${taskId}/toggle`,
+        `https://sparkling-rejoicing-production.up.railway.app/api/tasks/${taskId}/toggle`,
         { completed: !currentStatus },
         { headers: { Authorization: `Bearer ${token}` } }
       );
