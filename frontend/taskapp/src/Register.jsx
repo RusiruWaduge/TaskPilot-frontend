@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import logo from './assets/logo.jpg'; // Adjust the path as necessary
 
 const Register = () => {
   const [form, setForm] = useState({ name: '', email: '', password: '' });
@@ -69,6 +70,16 @@ const Register = () => {
             className="bg-white p-8 rounded-lg shadow-md w-full max-w-md"
             noValidate
           >
+            {/* Logo */}
+            <div className="flex justify-center mb-6">
+              <img
+                src={logo}
+                alt="TaskPilot Logo"
+                className="h-20 w-auto object-contain"
+                draggable={false}
+              />
+            </div>
+
             <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">
               Create Your TaskPilot Account
             </h2>
