@@ -67,7 +67,12 @@ const Footer = () => (
           draggable={false}
         />
         <span className="font-bold text-gray-900 text-lg tracking-wide">
-          TaskPilot
+          TaskPilot 
+         
+        </span>
+        <span className=" text-gray-900  tracking-wide text-sm">
+           "Master Your Tasks, Master Your Day"
+          
         </span>
       </div>
       <div className="text-gray-700 text-sm text-center md:text-right">
@@ -419,7 +424,7 @@ function Dashboard() {
       
       
       {/* Header */}
-      <header className="w-full shadow-md bg-gray-100 bg-opacity-80 z-10 py-4 md:py-6 mb-6">
+      <header className="w-full shadow-md bg-gray-300 bg-opacity-80 z-10 py-4 md:py-6 mb-6">
      <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center md:justify-between gap-4 md:gap-0">
       {/* Logo + Title */}
      <div className="flex flex-col items-center md:flex-row md:items-center gap-2 md:gap-4 w-full md:w-auto">
@@ -431,7 +436,9 @@ function Dashboard() {
       />
       <h1 className="text-3xl md:text-4xl font-extrabold text-gray-900 tracking-wide text-center md:text-left">
         TaskPilot
+        
       </h1>
+      
     </div>
 
     {/* User Info + Logout */}
