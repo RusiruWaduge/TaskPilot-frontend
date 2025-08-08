@@ -3,6 +3,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import logo from '../src/assets/logo.jpg'; // Adjust the path as necessary
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -41,10 +42,13 @@ const Login = () => {
     if (!validateForm()) return;
 
     try {
-      const res = await axios.post('https://sparkling-rejoicing-production.up.railway.app/api/auth/login', {
-        email,
-        password,
-      });
+      const res = await axios.post(
+        'https://sparkling-rejoicing-production.up.railway.app/api/auth/login',
+        {
+          email,
+          password,
+        }
+      );
 
       localStorage.setItem('token', res.data.token);
       toast.success('Login successful! Welcome to TaskPilot.');
@@ -54,7 +58,9 @@ const Login = () => {
         navigate('/');
       }, 1500);
     } catch (err) {
-      toast.error('Login failed: ' + (err.response?.data?.message || err.message));
+      toast.error(
+        'Login failed: ' + (err.response?.data?.message || err.message)
+      );
     }
   };
 
@@ -77,6 +83,16 @@ const Login = () => {
             onSubmit={handleSubmit}
             noValidate
           >
+            {/* Logo */}
+            <div className="flex justify-center mb-6">
+              <img
+                src={logo}
+                alt="TaskPilot Logo"
+                className="h-20 w-auto object-contain"
+                draggable={false}
+              />
+            </div>
+
             <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">
               Welcome To TaskPilot
             </h2>
