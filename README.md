@@ -4,8 +4,10 @@
 </h2>
 
 <div align="center">
-  <img alt="TaskPilot Demo" src="../taskapp/src/assets/2.png" />
+  <img alt="TaskPilot Demo" src="./frontend/taskapp/src/assets/2.png" />
 </div>
+
+
 
 ---
 
