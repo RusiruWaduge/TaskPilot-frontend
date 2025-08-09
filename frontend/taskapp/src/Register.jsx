@@ -3,12 +3,12 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import logo from './assets/logo.jpg'; // Adjust the path as necessary
+import logo from '../src/assets/logo.jpg'; // Adjust path as needed
 
 const Register = () => {
   const [form, setForm] = useState({ name: '', email: '', password: '' });
   const [errors, setErrors] = useState({});
-  const navigate = useNavigate(); // Hook for navigation
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -26,16 +26,13 @@ const Register = () => {
     if (!form.name.trim()) {
       validationErrors.name = 'Name is required';
     }
-
     if (!emailRegex.test(form.email)) {
       validationErrors.email = 'Please enter a valid email address';
     }
-
     if (!strongPasswordRegex.test(form.password)) {
       validationErrors.password =
         'Password must be at least 6 characters and include uppercase, lowercase, number, and special character';
     }
-
     setErrors(validationErrors);
     return Object.keys(validationErrors).length === 0;
   };
@@ -47,8 +44,6 @@ const Register = () => {
     try {
       const res = await axios.post('https://sparkling-rejoicing-production.up.railway.app/api/auth/register', form);
       toast.success(res.data.message || 'Registration successful!');
-
-      // Navigate to login page after short delay to show toast
       setTimeout(() => {
         navigate('/login');
       }, 1500);
@@ -79,7 +74,6 @@ const Register = () => {
                 draggable={false}
               />
             </div>
-
             <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">
               Create Your TaskPilot Account
             </h2>
@@ -103,7 +97,6 @@ const Register = () => {
                 <p className="text-red-500 text-sm mt-1">{errors.name}</p>
               )}
             </div>
-
             {/* Email Field */}
             <div className="mb-4">
               <label className="block text-gray-700 mb-1" htmlFor="email">
@@ -124,7 +117,6 @@ const Register = () => {
                 <p className="text-red-500 text-sm mt-1">{errors.email}</p>
               )}
             </div>
-
             {/* Password Field */}
             <div className="mb-6">
               <label className="block text-gray-700 mb-1" htmlFor="password">
@@ -145,15 +137,13 @@ const Register = () => {
                 <p className="text-red-500 text-sm mt-1">{errors.password}</p>
               )}
             </div>
-
             {/* Submit Button */}
             <button
               type="submit"
-              className="w-full py-2 bg-gradient-to-r from-red-600 to-red-500 text-white font-semibold rounded-md hover:from-gray-700 hover:to-gray-500 transition-all duration-200 shadow"
+              className="w-full py-2 bg-gradient-to-r from-blue-600 to-blue-500 text-white font-semibold rounded-md hover:from-gray-700 hover:to-gray-500 transition-all duration-200 shadow"
             >
               Register
             </button>
-
             {/* Link to Login */}
             <p className="mt-4 text-sm text-center text-gray-600">
               Already have an account?{' '}
@@ -163,7 +153,6 @@ const Register = () => {
             </p>
           </form>
         </div>
-
         {/* Image Side */}
         <div className="md:w-1/2 w-full h-64 md:h-auto">
           <img
@@ -174,7 +163,6 @@ const Register = () => {
           />
         </div>
       </div>
-
       {/* Toast Container for toastify */}
       <ToastContainer position="top-right" autoClose={3000} hideProgressBar />
     </>
