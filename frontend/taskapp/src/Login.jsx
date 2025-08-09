@@ -52,7 +52,6 @@ const Login = () => {
       localStorage.setItem('token', res.data.token);
       toast.success('Login successful! Welcome to TaskPilot.');
 
-      // Delay navigation so user can see toast
       setTimeout(() => {
         navigate('/');
       }, 1500);
