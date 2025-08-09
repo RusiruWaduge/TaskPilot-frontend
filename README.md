@@ -4,9 +4,8 @@
 </h2>
 
 <div align="center">
-  <img alt="TaskPilot Demo" src="./assets/readme-banner.png" />
+  <img alt="TaskPilot Demo" src="../taskapp/src/assets/2.png" />
 </div>
-
 
 ---
 
