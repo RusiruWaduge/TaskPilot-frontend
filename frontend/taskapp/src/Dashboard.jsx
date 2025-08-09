@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-import logo from "../src/assets/logo.jpg"; // Adjust path as needed
+import logo from "../src/assets/logo.jpg"; 
 
-// Inline styles for blurred background overlay
+
 const backgroundOverlayStyle = {
   position: "absolute",
   content: "''",
@@ -20,7 +20,7 @@ const backgroundOverlayStyle = {
 
 };
 
-// SearchBar component
+
 const SearchBar = ({ searchQuery, setSearchQuery }) => (
   <div className="max-w-3xl mx-auto px-4 mb-6 relative z-10">
     <label htmlFor="task-search" className="sr-only">
@@ -28,7 +28,7 @@ const SearchBar = ({ searchQuery, setSearchQuery }) => (
     </label>
     <div className="relative text-black bg-white rounded-lg shadow-sm">
       <span className="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
-        {/* Search Icon */}
+       
         <svg
           className="w-5 h-5 text-gray-500"
           fill="none"
@@ -55,7 +55,7 @@ const SearchBar = ({ searchQuery, setSearchQuery }) => (
   </div>
 );
 
-// Footer component
+
 const Footer = () => (
   <footer className="w-full bg-gray-100 bg-opacity-90 py-6 mt-auto border-t border-gray-200 z-10">
     <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between px-4">
@@ -84,7 +84,7 @@ const Footer = () => (
 );
 
 function Dashboard() {
-  // State
+
   const [tasks, setTasks] = useState([]);
   const [formData, setFormData] = useState({
     title: "",
@@ -122,7 +122,7 @@ function Dashboard() {
     } else {
       fetchUser();
     }
-    // eslint-disable-next-line
+  
   }, []);
 
   const fetchUser = async () => {
@@ -158,7 +158,7 @@ function Dashboard() {
 
   useEffect(() => {
     fetchTasks();
-    // eslint-disable-next-line
+   
   }, []);
 
   const handleChange = (e) => {
@@ -422,11 +422,10 @@ function Dashboard() {
     >
       <div style={backgroundOverlayStyle} />
       
-      
-      {/* Header */}
+  
       <header className="w-full shadow-md bg-gray-300 bg-opacity-80 z-10 py-4 md:py-6 mb-6">
      <div className="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center md:justify-between gap-4 md:gap-0">
-      {/* Logo + Title */}
+     
      <div className="flex flex-col items-center md:flex-row md:items-center gap-2 md:gap-4 w-full md:w-auto">
       <img
         src={logo}
@@ -441,7 +440,7 @@ function Dashboard() {
       
     </div>
 
-    {/* User Info + Logout */}
+   
     <div className="flex flex-col md:flex-row items-center gap-3 w-full md:w-auto text-center md:text-left">
       <div className="flex items-center gap-3 justify-center md:justify-start w-full md:w-auto">
         <img

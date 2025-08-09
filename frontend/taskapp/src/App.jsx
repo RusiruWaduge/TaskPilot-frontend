@@ -5,8 +5,7 @@ import AddTask from './AddTask';
 import EditTask from './EditTask';
 import Login from './Login';
 import Register from './Register';
-import './App.css'; // Assuming you have some global styles
-
+import './App.css'; 
 function App() {
   return (
     <Router>

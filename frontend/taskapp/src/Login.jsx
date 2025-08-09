@@ -3,8 +3,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import logo from '../src/assets/logo.jpg'; // Adjust the path as necessary
-
+import logo from '../src/assets/logo.jpg'; 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -14,7 +13,7 @@ const Login = () => {
   const validateForm = () => {
     const errors = {};
     const emailRegex =
-      /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/; // General RFC 5322-style email validation
+      /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/; 
 
     if (!emailRegex.test(email)) {
       errors.email = 'Please enter a valid email address';
@@ -24,7 +23,7 @@ const Login = () => {
       errors.password = 'Password must be at least 6 characters long';
     }
 
-    // Optional: stricter password policy
+    
     const strongPasswordRegex =
       /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&()#^])[A-Za-z\d@$!%*?&()#^]{6,}$/;
 
@@ -67,7 +66,7 @@ const Login = () => {
   return (
     <>
       <div className="min-h-screen flex flex-col md:flex-row">
-        {/* Image Side */}
+      
         <div className="md:w-1/2 w-full h-64 md:h-auto">
           <img
             src="https://images.unsplash.com/photo-1586473219010-2ffc57b0d282?fm=jpg&q=60&w=3000&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8OHx8dGFzayUyMG1hbmFnZW1lbnR8ZW58MHx8MHx8fDA%3D"
@@ -76,14 +75,13 @@ const Login = () => {
           />
         </div>
 
-        {/* Login Form Side */}
         <div className="md:w-1/2 w-full flex items-center justify-center bg-gray-300">
           <form
             className="bg-white p-8 rounded-lg shadow-md w-full max-w-md"
             onSubmit={handleSubmit}
             noValidate
           >
-            {/* Logo */}
+            
             <div className="flex justify-center mb-6">
               <img
                 src={logo}
@@ -97,7 +95,7 @@ const Login = () => {
               Welcome To TaskPilot
             </h2>
 
-            {/* Email */}
+            
             <div className="mb-4">
               <label htmlFor="email" className="block text-gray-700 mb-1">
                 Email
@@ -117,7 +115,7 @@ const Login = () => {
               )}
             </div>
 
-            {/* Password */}
+            
             <div className="mb-6">
               <label htmlFor="password" className="block text-gray-700 mb-1">
                 Password
@@ -154,7 +152,7 @@ const Login = () => {
         </div>
       </div>
 
-      {/* Toast container renders all toasts */}
+      
       <ToastContainer position="top-right" autoClose={3000} />
     </>
   );
